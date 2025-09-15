@@ -134,3 +134,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# OS / éditeurs (optionnel)
+.DS_Store
+.idea/
+.vscode/
