@@ -1,0 +1,32 @@
+
+
+
+[
+  {
+    "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+    "title": "Castle in the Sky",
+    "director": "Hayao Miyazaki",
+    "release_date": "1986",
+    "description": "The orphan Sheeta...",
+    "image": "https://image.tmdb.org/t/p/w300/npOnzAbLh6VOIu3naU5QaEcTepo.jpg",
+    "movie_banner": "https://image.tmdb.org/t/p/original/3cyjYtLWCBE1uvWINHFsFnE8LUK.jpg"
+  },
+  {
+    "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
+    "title": "Grave of the Fireflies",
+    "director": "Isao Takahata",
+    "release_date": "1988",
+    "description": "A heartbreaking tale...",
+    "image": "https://image.tmdb.org/t/p/w300/qG3RYlIVpTYclR9TYIsy8p7m7AT.jpg",
+    "movie_banner": "https://image.tmdb.org/t/p/original/t7aUoNGYx8PBkH5G3Y7WvyaManR.jpg"
+  },
+  {
+    "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+    "title": "My Neighbor Totoro",
+    "director": "Hayao Miyazaki",
+    "release_date": "1988",
+    "description": "Two girls move to the country...",
+    "image": "https://image.tmdb.org/t/p/w300/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg",
+    "movie_banner": "https://image.tmdb.org/t/p/original/7rIPjn5TUK04O25ZkMyHrGNPgLx.jpg"
+  }
+]
