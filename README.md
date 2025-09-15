@@ -1,12 +1,15 @@
 
 
+**See GhiblApp live on https://apps.grandsenne.com/ghiblapp/.**
 
-GhiblApp is a simple React app, that uses the Ghbli API to display the list of all long-feature movies released by Studio Ghibli, sorted chronologically. 
 
-It includes a search field to look for a movie title or a director's name. 
+![Preview](https://apps.grandsenne.com/ghiblapp/assets/princesse-mononoke-CESeXHLj.webp)
 
-If you click on a title, the default image is replaced by one from the movie, followed by its description. 
 
-A "sort by" feature (alphabetically, by director…) is planned to arrive when I have the time to add it. 
+GhiblApp is a simple responsive React app, that uses the Studio Ghibli API to list their feature films chronologically. 
+
+When a title is clicked, it shows the movie’s image and description, and it also allows searching by title or director.
+
+I'm planning to add a Sort by option soon (alphabetical order, by director, etc.).
 
 Made by Jérémie Grandsenne, 13-15 september 2025. 
