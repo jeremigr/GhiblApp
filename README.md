@@ -1,7 +1,8 @@
 
 
+See GhiblApp live on https://apps.grandsenne.com/ghiblapp.
 
-GhiblApp is a simple React app, that uses the Ghbli API to display the list of all long-feature movies released by Studio Ghibli, sorted chronologically. 
+GhiblApp is a simple React app, that uses the Studio Ghbli API to display the list of all long-feature movies released by Studio Ghibli, sorted chronologically. 
 
 It includes a search field to look for a movie title or a director's name. 
 
