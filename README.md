@@ -11,7 +11,7 @@ When a title is clicked, it displays the movie's image and description.
 You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
 
 
-**See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
+See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
 
 
 Made by Jérémie Grandsenne, September 2025. 
@@ -28,4 +28,4 @@ More small development works <a href='https://grandsenne.com/development/' targe
 - Researcher, content manager and writer: 15 years in tech, marketing, culture.
 - Trusted by ConsenSys, Fetch.ai, Google, Vogue, Chanel. 
 
-Feel free to get in touch!
+<br><br>Feel free to get in touch!
