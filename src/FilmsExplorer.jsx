@@ -11,13 +11,11 @@ export default function FilmsExplorer() {
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState(null);
   
-
-
   const [films, setFilms] = useState([]);
   const [status, setStatus] = useState('idle');   // 'idle' | 'loading' | 'success' | 'error'
   const [error, setError] = useState(null);
 
-const visibleFilms = useMemo(() => {
+  const visibleFilms = useMemo(() => {
   const q = query.trim().toLowerCase();
   if (!q) return films;
   return films.filter((film) => {
@@ -27,6 +25,18 @@ const visibleFilms = useMemo(() => {
   });
 }, [films, query]);
 
+
+  const sortedFilms = useMemo(() => {
+  const arr = [...visibleFilms]; // ne pas muter visibleFilms
+  if (sortBy === 'title') {
+    arr.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  } else if (sortBy === 'director') {
+    arr.sort((a, b) => (a.director || '').localeCompare(b.director || ''));
+  } else if (sortBy === 'year') {
+    arr.sort((a, b) => (a.year ?? 0) - (b.year ?? 0)); // ancien -> récent
+  }
+  return arr;
+}, [visibleFilms, sortBy]);
 
 
   useEffect(() => {
@@ -55,6 +65,8 @@ const visibleFilms = useMemo(() => {
       setStatus('success');
     })
  
+    
+
 
 
 .catch((err) => {
@@ -88,6 +100,9 @@ const visibleFilms = useMemo(() => {
 
 
 
+
+
+
   return () => ctrl.abort();
 }, []);
 
@@ -102,13 +117,6 @@ const visibleFilms = useMemo(() => {
   return () => window.removeEventListener('keydown', onEsc);
 }, []);
 
-    useEffect(() => {
-      if (selectedId) {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      }
-    }, [selectedId]);
-
-
 
   const selectedFilm = selectedId ? films.find((film) => film.id === selectedId) : null;
 
@@ -121,56 +129,66 @@ const visibleFilms = useMemo(() => {
 
 
 
-      <div>
 
-        {/*<div style={{
-            textAlign: 'center',
-            backgroundColor:'#9898fbff',
-            color:'#FFF',
-            border:'none',
-            padding:'30px',
-            borderRadius:'50px',
-            fontSize:'24px'
-          }}>
 
-        GhiblApp
-
-        </div> */} 
+  <div>
+    
     <div>
-        {/* <div style={{
-            textAlign: 'center',
-            backgroundColor:'#9898fbff',
-            color:'#FFF',
-            border:'none',
-            padding:'10px',
-            marginBottom:'1em',
-            // marginRight: '2em',
-            borderRadius:'100px',
-            fontSize:'24px'
-          }}
-          >GhiblApp</div> */}
-        
+      
+      <div className="controls"><div className="controls-inner">
 
+          
         <input
           id="ghibli-search" 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Esc') setQuery(''); }}
-          placeholder="Search by title or director…"
+          placeholder="Search by title or director"
           style={{
             textAlign: 'center',
             backgroundColor:'#9898fbff',
             color:'#FFF',
             border:'none',
+            marginRight:'0.22em',
             padding:'10px',
-            marginBottom:'2em',
+            // marginBottom:'1em',
             borderRadius:'12px',
             fontSize:'18px'
           }}
         />
 
-        <br></br>
-          <img
+          <select
+            id="sort-select"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+               style={{                 
+                  backgroundColor: '#9898fbff',
+                  color: '#fff',
+                  textAlign:'center',
+                  // marginBottom:'1em',
+                  border: 'none',
+                  outline: 'none',
+                  boxShadow: 'none',
+                  borderRadius: 12,
+                  fontSize: '18px',
+                  padding:'10px',
+                  backgroundClip: 'padding-box', // évite l’inner border sur Safari/iOS
+                  cursor: 'pointer',
+                }}
+                          >
+            <option value="year">Sort by: Year</option>
+            <option value="director">Sort by: Director</option>
+            <option value="title">Sort by: Title</option>
+          
+          </select>
+        </div>
+
+
+
+        <br></br><br></br>
+  </div>
+
+  <div>        <img
     id="hero-image"
     src={selectedFilm ? (selectedFilm.banner || selectedFilm.image || mononoke) : mononoke}
     alt="Princess Mononoke"
@@ -182,54 +200,49 @@ const visibleFilms = useMemo(() => {
         }}
       />
         </div>
+        </div>
 <br></br>
 
         {selectedFilm && !query.trim() && (
-          <>
-          <div id="film-details" className="film-title">            
+          <div className="film-title">            
           <strong>{selectedFilm.title}</strong>
-            <br></br></div>
-            <div className="film-desc" style={{textAlign:'center',margin:'1.5em auto'}}>
-              {selectedFilm.description}
-              <br></br><br></br> </div>
-          </>
+            <br></br>
+          <div className="film-desc" style={{textAlign:'center',maxWidth:'60vw',margin:'1.5em auto'}}>
+            {selectedFilm.description}
+            <br></br><br></br>
+          </div>
+      </div>
+      
     )}
         
       </div>
 
-
-    {visibleFilms.map(film => (
+    
+    {sortedFilms.map(film => (
     <div 
       key={film.id} 
-      onClick={() => {
-        setSelectedId(film.id);
-        setQuery('');
-        // défère le scroll à l'image près : évite les ratés quand la mise en page bouge
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  });
-}}
- 
-      style={{ cursor: `url(${heartCursor}) 16 16, pointer`}}
+      onClick={() => { setSelectedId(film.id); setQuery(''); }} 
+      style={{ cursor: `url(${heartCursor}) 12 12, pointer`}}
       > 
-      <span className="film-title-line"><strong>{film.title}</strong>
-      <span className='film-dash'> - </span> </span>{' '}
-      <span className="film-meta-line">{film.director} — {film.year}</span>
-
+      <strong>{film.title} </strong>  {film.director} - {film.year}  
     </div>
     
-))}
+    ))}
+
+    
 
 {/* <div style={{fontSize:'12px'}}><br></br><br></br>By <a href='http://grandsenne.com' target='_blank'></a>Jérémie Grandsenne</a></div>   */}
 
     <div style={{fontSize:'12px'}}>
        <br></br><br></br>
        By <a href="http://grandsenne.com" target="_blank">Jérémie Grandsenne</a>
+       <br></br>
+       <a href='https://github.com/jeremigr/GhiblApp' target='_blank'>Github</a>
+
     </div>
 
 </div>;
 }
-
 
 
 

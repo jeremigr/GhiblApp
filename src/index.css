@@ -30,13 +30,8 @@ body {
   min-height: 100svh;     /* 100vh si tu préfères */
   align-items: center;     /* centre verticalement la ligne de flex */
   justify-content: center; /* centre horizontalement */
-  
-
-  /*
-    margin: 0;display:flex;*/
   display: flex; 
   place-items: center;
-  align-items: center;     /* centre verticalement la ligne de flex */
   min-width: 320px;
   min-height: 100vh;
   place-content: center;  /* centre horizontal + vertical */
@@ -68,6 +63,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -82,9 +80,9 @@ button:focus-visible {
 }
 
 #ghibli-search { color: rgb(243, 243, 243); }                    /* texte saisi */
-#ghibli-search::placeholder { color: rgb(255, 255, 255); opacity: 0.9; }  /* placeholder standard */
-#ghibli-search::-webkit-input-placeholder { color: #ffffff; opacity: 0.9; } /* Safari/Chromium hérités */
-#ghibli-search::-moz-placeholder { color: #ffffff; opacity: 0.9; }          /* Firefox hérités */
+#ghibli-search::placeholder { color: rgb(255, 255, 255); opacity: 1; }  /* placeholder standard */
+#ghibli-search::-webkit-input-placeholder { color: #ffffff; opacity: 1; } /* Safari/Chromium hérités */
+#ghibli-search::-moz-placeholder { color: #ffffff; opacity: 1; }          /* Firefox hérités */
 
 /* Tailles par défaut = laptop/desktop */
 .films-root { font-size: 18px; }   /* liste */
@@ -94,6 +92,21 @@ button:focus-visible {
 
 .film-title-line,
 .film-meta-line { display: inline; }
+
+.controls {
+  display: grid;
+  justify-items: center;   /* centre horizontalement le contenu */
+  margin: 0 auto 1.5rem auto;  /* centre + espace sous le groupe */
+  width: 100%;
+}
+
+.controls-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;               /* espace entre input et select */
+}
+
+
 
 /* Mobile (<= 600px) : tailles réduites + image à 80% du viewport */
 @media (max-width: 600px) {
@@ -105,6 +118,7 @@ button:focus-visible {
   .film-meta-line  { display: block; }
   .film-dash { display: none;}
   
+
    .home-root {
     align-content: start !important;
     justify-content: center !important;
@@ -126,6 +140,17 @@ button:focus-visible {
     padding-top: 20px;
     /* pas de display forcé => ton inline 'display: none' reste effectif quand entered=true */
   }
+
+  .controls { 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+  .controls-inner {
+    flex-direction: column;   /* pile propre au centre en mobile */
+  }
+
+
 }
 
 
