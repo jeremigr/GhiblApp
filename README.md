@@ -8,6 +8,7 @@ It includes a search field to look for a movie title or a director's name.
 
 If you click on a title, the default image is replaced by one from the movie, followed by its description. 
 
-A "sort by" feature (alphabetically, by director…) is planned to arrive when I have the time to add it. 
+A "sort by" feature also allows you to sort the list by movie title, director or year. 
 
-Made by Jérémie Grandsenne, 13-15 september 2025. 
+Made by Jérémie Grandsenne, September 2025. 
+
