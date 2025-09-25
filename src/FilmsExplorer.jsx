@@ -2,7 +2,13 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import mononoke from './assets/princesse-mononoke.webp'
+import logoghibli from './assets/ghibli_logo_big.png'
 import heartCursor from './assets/heart_cursor.png';
+import heronPoster from './assets/heron1.jpg';     // ← ton poster (peut être le même que banner)
+import heronBanner from './assets/heron1.jpg';     // ← ta bannière large
+import nausicaaPoster from './assets/nausicaa1.jpg'; // ← ton poster Nausicaä
+import nausicaaBanner from './assets/nausicaa1.jpg'; // ← ta bannière Nausicaä
+
 
 
 
@@ -30,11 +36,17 @@ export default function FilmsExplorer() {
   const arr = [...visibleFilms]; // ne pas muter visibleFilms
   if (sortBy === 'title') {
     arr.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
-  } else if (sortBy === 'director') {
-    arr.sort((a, b) => (a.director || '').localeCompare(b.director || ''));
-  } else if (sortBy === 'year') {
-    arr.sort((a, b) => (a.year ?? 0) - (b.year ?? 0)); // ancien -> récent
-  }
+} else if (sortBy === 'director') {
+  arr.sort((a, b) => {
+    const byDirector = (a.director || '').localeCompare(b.director || '');
+    if (byDirector !== 0) return byDirector;
+    return (a.year ?? 0) - (b.year ?? 0); // à l’intérieur d’un réalisateur : ancien → récent
+  });
+} else if (sortBy === 'year-asc') {
+  arr.sort((a, b) => (a.year ?? 0) - (b.year ?? 0));   // ancien → récent
+} else if (sortBy === 'year-desc') {
+  arr.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));   // récent → ancien
+}
   return arr;
 }, [visibleFilms, sortBy]);
 
@@ -61,7 +73,63 @@ export default function FilmsExplorer() {
         banner: film.movie_banner,
 
       }));
-      setFilms(adapted);
+      // --- AJOUT HORS API : Miyazaki 2023 + Nausicaä ---
+      if (!adapted.some(f => (f.title || '').toLowerCase() === 'the boy and the heron')) {
+        adapted.push({
+          id: 'miyazaki-2023-custom',
+          title: 'The Boy and the Heron',      
+          director: 'Hayao Miyazaki',
+          year: 2023,
+          description: "During the Pacific War, Mahito Maki loses his hospitalized mother, Hisako, in the firebombing of Tokyo. Mahito's father Shoichi, an air munitions factory owner, marries his late wife's sister, Natsuko, and they evacuate to her rural estate. Mahito, distant to the pregnant Natsuko, encounters a peculiar grey heron leading him to a sealed tower, the last known location of Natsuko's architect granduncle.",
+          image: heronPoster,                  
+          banner: heronBanner
+        });
+      }
+
+      if (!adapted.some(f => (f.title || '').toLowerCase().includes('nausicaa'))) {
+        adapted.push({
+          id: 'nausicaa-1984-custom',
+          title: 'Nausicaä of the Valley of the Wind',  
+          director: 'Hayao Miyazaki',
+          year: 1984,
+          description: "One thousand years have passed since the Seven Days of Fire, an apocalyptic war that destroyed civilization and caused an ecocide, creating the vast Toxic Jungle, a poisonous forest swarming with giant mutant insects. In the kingdom of the Valley of the Wind, a prophecy predicts a savior 'clothed in a blue robe, descending onto a golden field'. The Valley's princess Nausicaä explores the jungle and communicates with its creatures, including the gigantic, trilobite-like armored Ohm. She hopes to understand the jungle and find a way for it and humans to coexist",
+          image: nausicaaPoster,
+          banner: nausicaaBanner
+        });
+      }
+    
+
+      // Ajouts hors API (injectés au moment du set)
+    const extras = [];
+
+    if (!adapted.some(f => (f.title || '').toLowerCase() === 'the boy and the heron')) {
+      extras.push({
+        id: 'miyazaki-2023-custom',
+        title: 'The Boy and the Heron',
+        director: 'Hayao Miyazaki',
+        year: 2023,
+        description: '',
+        image: heronPoster,
+        banner: heronBanner
+      });
+    }
+
+    // NB: on normalise pour gérer le ä
+    const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    if (!adapted.some(f => norm(f.title || '').toLowerCase().includes('nausicaa'))) {
+      extras.push({
+        id: 'nausicaa-1984-custom',
+        title: 'Nausicaä of the Valley of the Wind',
+        director: 'Hayao Miyazaki',
+        year: 1984,
+        description: '',
+        image: nausicaaPoster,
+        banner: nausicaaBanner
+      });
+    }
+
+    setFilms([...adapted, ...extras]);
+
       setStatus('success');
     })
  
@@ -88,7 +156,66 @@ export default function FilmsExplorer() {
         image: film.image,
         banner: film.movie_banner,
       }));
-      setFilms(adapted);
+
+      // --- AJOUT HORS API : Miyazaki 2023 + Nausicaä ---
+      if (!adapted.some(f => (f.title || '').toLowerCase() === 'the boy and the heron')) {
+        adapted.push({
+          id: 'miyazaki-2023-custom',
+          title: 'The Boy and the Heron',     
+          director: 'Hayao Miyazaki',
+          year: 2023,
+          description: '',
+          image: heronPoster,                  
+          banner: heronBanner
+        });
+      }
+
+      if (!adapted.some(f => (f.title || '').toLowerCase().includes('nausicaa'))) {
+        adapted.push({
+          id: 'nausicaa-1984-custom',
+          title: 'Nausicaä of the Valley of the Wind',  
+          director: 'Hayao Miyazaki',
+          year: 1984,
+          description: '',
+          image: nausicaaPoster,
+          banner: nausicaaBanner
+        });
+      }
+      // --- FIN AJOUT ---
+
+
+      // Ajouts hors API (injectés au moment du set)
+const extras = [];
+
+      if (!adapted.some(f => (f.title || '').toLowerCase() === 'the boy and the heron')) {
+        extras.push({
+          id: 'miyazaki-2023-custom',
+          title: 'The Boy and the Heron',
+          director: 'Hayao Miyazaki',
+          year: 2023,
+          description: '',
+          image: heronPoster,
+          banner: heronBanner
+        });
+      }
+
+      // NB: on normalise pour gérer le ä
+      const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (!adapted.some(f => norm(f.title || '').toLowerCase().includes('nausicaa'))) {
+        extras.push({
+          id: 'nausicaa-1984-custom',
+          title: 'Nausicaä of the Valley of the Wind',
+          director: 'Hayao Miyazaki',
+          year: 1984,
+          description: '',
+          image: nausicaaPoster,
+          banner: nausicaaBanner
+        });
+      }
+
+      setFilms([...adapted, ...extras]);
+
+
       setStatus('success');
       setError(null);
     })
@@ -119,6 +246,16 @@ export default function FilmsExplorer() {
 
 
   const selectedFilm = selectedId ? films.find((film) => film.id === selectedId) : null;
+  // Clic sur la hero = sélectionne un film aléatoire parmi la liste visible (triée)
+
+  const pickRandom = () => {
+  const list = sortedFilms;                     // utilise l’ensemble actuellement visible + trié
+  if (!list.length) return;
+  const rnd = list[Math.floor(Math.random() * list.length)];
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setSelectedId(rnd.id);
+  // setQuery('');                                  si tu préfères conserver la recherche active, supprime cette ligne
+};
 
 
   
@@ -145,8 +282,9 @@ export default function FilmsExplorer() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Esc') setQuery(''); }}
-          placeholder="Search by title or director"
+          placeholder="Search by Title or Director"
           style={{
+            cursor: `url(${heartCursor}) 12 12, pointer`,
             textAlign: 'center',
             backgroundColor:'#9898fbff',
             color:'#FFF',
@@ -155,7 +293,7 @@ export default function FilmsExplorer() {
             padding:'10px',
             // marginBottom:'1em',
             borderRadius:'12px',
-            fontSize:'18px'
+            // fontSize:'18px'
           }}
         />
 
@@ -172,33 +310,41 @@ export default function FilmsExplorer() {
                   outline: 'none',
                   boxShadow: 'none',
                   borderRadius: 12,
-                  fontSize: '18px',
+                  // fontSize: '18px',
                   padding:'10px',
                   backgroundClip: 'padding-box', // évite l’inner border sur Safari/iOS
-                  cursor: 'pointer',
+                  cursor: `url(${heartCursor}) 12 12, pointer`
                 }}
                           >
-            <option value="year">Sort by: Year</option>
+            <option value="year-asc">Sort by: Year ▼</option>   {/* ancien → récent */}
+            <option value="year-desc">Sort by: Year ▲</option>  {/* récent → ancien */}
             <option value="director">Sort by: Director</option>
             <option value="title">Sort by: Title</option>
           
           </select>
+
+          {/* <button 
+          id="bouton_random"
+          onClick={pickRandom}>Random
+        
+          </button> */}
+
         </div>
 
-
-
-        <br></br><br></br>
+        {/* <br></br><br></br> */}
   </div>
 
   <div>        <img
     id="hero-image"
     src={selectedFilm ? (selectedFilm.banner || selectedFilm.image || mononoke) : mononoke}
     alt="Princess Mononoke"
+    onClick={pickRandom}
     style={{
       display: 'block',
       margin: '0 auto',
       borderRadius: '150px',
-      height: 'auto'
+      height: 'auto',
+      cursor: `url(${heartCursor}) 12 12, pointer`
         }}
       />
         </div>
@@ -209,7 +355,7 @@ export default function FilmsExplorer() {
           <div className="film-title">            
           <strong>{selectedFilm.title}</strong>
             <br></br>
-          <div className="film-desc" style={{textAlign:'center',maxWidth:'60vw',margin:'1.5em auto'}}>
+          <div className="film-desc" style={{textAlign:'center',maxWidth:'60vw',margin:'1em auto'}}>
             {selectedFilm.description}
             <br></br><br></br>
           </div>
@@ -220,28 +366,83 @@ export default function FilmsExplorer() {
       </div>
 
     
-    {sortedFilms.map(film => (
+    {sortedFilms.map((film, i) => (
     <div 
       key={film.id} 
-      onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setSelectedId(film.id); setQuery(''); }}
-      style={{ cursor: `url(${heartCursor}) 12 12, pointer`}}
+      // onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setSelectedId(film.id); setQuery(''); }}
+      style={{
+      // cursor: `url(${heartCursor}) 12 12, pointer`,
+      marginTop: (sortBy === 'director' && i > 0 && sortedFilms[i - 1].director !== film.director) ? '1em' : '0',
+    }}
+
       > 
-      <strong>{film.title} </strong>  {film.director} - {film.year}  
+      {/* {sortBy === 'director' ? (
+        <>
+          <strong>{film.director}</strong> {film.title} - {film.year}
+        </>
+      ) : (
+        <>
+          <strong>{film.title}</strong> {film.director} - {film.year}
+        </>
+      )} */}
+
+      {sortBy === 'director' ? (
+  <>
+    {(i === 0 || sortedFilms[i - 1].director !== film.director) && (
+      <div style={{ marginBottom: '0em'}}>
+        <strong>{film.director}</strong>
+      </div>
+    )}
+
+    <div
+      onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setSelectedId(film.id); setQuery(''); }}
+      style={{ cursor: `url(${heartCursor}) 12 12, pointer` }}
+    >
+      {film.title} - {film.year}
+    </div>
+  </>
+) : (
+  <div
+    onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setSelectedId(film.id); setQuery(''); }}
+    style={{ cursor: `url(${heartCursor}) 12 12, pointer` }}
+  >
+    <strong>{film.title}</strong> {film.director} - {film.year}
+  </div>
+)}
+  
+
+
     </div>
     
     ))}
 
-    
+{/* <br></br>      */}
+    <img
+    src={logoghibli}
+    alt="Ghibli Logo"
+    id='logoghibli'
+    style={{
+      // marginTop:'1em',
+      // display: 'block',
+      // margin: '0 auto',
+      // maxWidth:'14vw',
+      // height: 'auto'
+        }}
+></img>
+{/* 
+<br></br>   */}
 
 {/* <div style={{fontSize:'12px'}}><br></br><br></br>By <a href='http://grandsenne.com' target='_blank'></a>Jérémie Grandsenne</a></div>   */}
 
     <div style={{fontSize:'12px'}}>
-       <br></br><br></br>
+       {/* <br></br><br></br> */}
        By <a href="http://grandsenne.com" target="_blank">Jérémie Grandsenne</a>
        <br></br>
        <a href='https://github.com/jeremigr/GhiblApp' target='_blank'>Github</a>
 
     </div>
+
+  
 
 </div>;
 }

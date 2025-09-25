@@ -8,9 +8,10 @@ GhiblApp is a simple React responsive web app, using the Studio Ghbli API to dis
 
 When a title is clicked, it displays the movie's image and description.
 
-You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
+You can also sort the list by title, director, or year (ascendant or descendant), or look for a specific movie or director in the search bar. 
+Clicking on the explorer's main image displays a random movie from the list. 
 
-Note: While my programming culture is solid, in practice I'm still learning it.
+Note: While my programming culture is solid, I'm still learning it in practice.
 
 **\> See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
 

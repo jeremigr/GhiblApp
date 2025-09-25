@@ -17,12 +17,10 @@ function App() {
     return (
   
  // <div style={{ minHeight: '100svh', display: 'grid', placeContent: 'center' }}>
- <div className={entered ? 'app-root' : 'home-root'} style={{ minHeight: '100svh', display: 'grid', alignContent: entered ? 'start' : 'center', justifyContent: 'center' }}>
+ <div className={entered ? 'app-root' : 'home-root'} style={{ minHeight: '100dvh', display: 'grid', alignContent: entered ? 'start' : 'center', justifyContent: 'center' }}>
 
 
 
-      <br>
-      </br>
 
     <div
       style={{

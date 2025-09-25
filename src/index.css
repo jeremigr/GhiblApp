@@ -64,7 +64,12 @@ button:focus-visible {
 }
 
 
-
+#logoghibli {
+   display: block;
+  margin: 1em auto 2em auto;
+  max-width:14vw;
+  height: auto;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -79,10 +84,10 @@ button:focus-visible {
   }
 }
 
-#ghibli-search { color: rgb(243, 243, 243); }                    /* texte saisi */
-#ghibli-search::placeholder { color: rgb(255, 255, 255); opacity: 1; }  /* placeholder standard */
-#ghibli-search::-webkit-input-placeholder { color: #ffffff; opacity: 1; } /* Safari/Chromium hérités */
-#ghibli-search::-moz-placeholder { color: #ffffff; opacity: 1; }          /* Firefox hérités */
+#ghibli-search { color: rgb(243, 243, 243); font-size: 18px;}                    /* texte saisi */
+#ghibli-search::placeholder { color: rgb(255, 255, 255); opacity: 1;font-size: 18px; }  /* placeholder standard */
+#ghibli-search::-webkit-input-placeholder { color: #ffffff; opacity: 1;font-size: 18px; } /* Safari/Chromium hérités */
+#ghibli-search::-moz-placeholder { color: #ffffff; opacity: 1; font-size: 18px;}          /* Firefox hérités */
 
 /* Tailles par défaut = laptop/desktop */
 .films-root { font-size: 18px; }   /* liste */
@@ -103,8 +108,77 @@ button:focus-visible {
 .controls-inner {
   display: flex;
   align-items: center;
-  gap: 12px;               /* espace entre input et select */
+  gap: 0.75em;               /* espace entre input et select */
 }
+
+
+#sort-select {
+  font-size: 18px;
+  background-color: #9898fbff;
+  /* margin-bottom: 1em; */
+  color: #fff;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 10px;
+  /* évite l’« inner border » sur Safari/iOS */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -webkit-appearance: none; /* iOS/iPadOS */
+  appearance: none;         /* standard */
+  box-sizing: border-box;
+}
+
+#sort-select {
+  font-size: 18px;
+  background-color: #9898fbff;
+  /* margin-bottom: 1em; */
+  color: #fff;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 10px;
+  /* évite l’« inner border » sur Safari/iOS */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -webkit-appearance: none; /* iOS/iPadOS */
+  appearance: none;         /* standard */
+  box-sizing: border-box;
+}
+
+#bouton_random {
+  font-size: 18px;
+  background-color: #9898fbff;
+  /* margin-bottom: 1em; */
+  color: #fff;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 10px;
+  /* évite l’« inner border » sur Safari/iOS */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -webkit-appearance: none; /* iOS/iPadOS */
+  appearance: none;         /* standard */
+  box-sizing: border-box;
+}
+
+
+/* Focus du champ de recherche : anneau fin et arrondi */
+#ghibli-search:focus,
+#ghibli-search:focus-visible {
+  outline: none;                 /* enlève le bleu par défaut */
+  box-shadow: 0; /* ← change cette couleur/épaisseur si tu veux */
+}
+
+
+
 
 
 
@@ -113,11 +187,22 @@ button:focus-visible {
   .films-root { font-size: 14px; }  /* liste */
   .film-title { font-size: 22px; }  /* titre fiche */
   .film-desc  { font-size: 18px; max-width:80vw;}  /* description */
-  #hero-image { width: 80vw; }      /* image = 80% de la largeur écran */
+  #hero-image { width: 80vw;}      /* image = 80% de la largeur écran */
   .film-title-line { display: block; margin-top: 0.5em; }
   .film-meta-line  { display: block; }
   .film-dash { display: none;}
   
+  
+/*  #ghibli-search { color: rgb(243, 243, 243); font-size: 16px;}                    /* texte saisi */
+  /*#ghibli-search::placeholder { color: rgb(255, 255, 255); opacity: 1;font-size: 16px; }  /* placeholder standard */
+  /*#ghibli-search::-webkit-input-placeholder { color: #ffffff; opacity: 1;font-size: 16px; } /* Safari/Chromium hérités */
+  /*#ghibli-search::-moz-placeholder { color: #ffffff; opacity: 1; font-size: 16px;}          /*Firefox hérités*/
+    
+
+  #sort-select {
+  font-size: 16px;
+  margin-bottom: 0;
+}
 
    .home-root {
     align-content: start !important;
@@ -150,8 +235,34 @@ button:focus-visible {
     flex-direction: column;   /* pile propre au centre en mobile */
   }
 
+  #logoghibli {
+    margin-top:1.5em;
+    max-width:30vw;
+  }
+
+  /* Réduit l’espace sous la barre de contrôle en mobile */
+.controls {
+  margin-bottom: 1.5rem;
+}
+
 
 }
+
+
+/* Tablette (iPad portrait/paysage) : centre verticalement la page d'accueil */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .home-root {
+    display: grid;
+    place-items: center;   /* centre horizontal + vertical */
+    height: 100dvh;        /* plein écran iPad (toolbar comprise) */
+    padding-top: 0 !important;
+  }
+
+
+  .home-root > :first-child { margin-top: 0; } /* optionnel : enlève une marge haute résiduelle */
+
+}
+
 
 
 
