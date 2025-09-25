@@ -2,8 +2,6 @@
 
 
 ![Preview](https://apps.grandsenne.com/ghiblapp/assets/princesse-mononoke-CESeXHLj.webp)
-![Preview](https://apps.grandsenne.com/ghiblapp/jeremiegrandsenne_ghiblapp.png)
-
 
 
 GhiblApp is a simple React responsive web app, using the Studio Ghbli API to display the list of their long-feature movies.
@@ -16,6 +14,9 @@ While my programming culture is solid, in practice I'm still learning it, but I 
 
 
 **\> See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
+
+<br>
+![Preview](https://apps.grandsenne.com/ghiblapp/jeremiegrandsenne_ghiblapp.png)
 
 Made by Jérémie Grandsenne, September 2025.
 
