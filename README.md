@@ -1,7 +1,5 @@
 
 
-**See GhiblApp live on https://apps.grandsenne.com/ghiblapp/.**
-
 
 ![Preview](https://apps.grandsenne.com/ghiblapp/assets/princesse-mononoke-CESeXHLj.webp)
 
@@ -12,13 +10,17 @@ When a title is clicked, it displays the movie's image and description.
 
 You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
 
+
+**See GhiblApp live on https://apps.grandsenne.com/ghiblapp/.**
+
+
 Made by Jérémie Grandsenne, September 2025. 
 
 ---
 
 More small development works on https://grandsenne.com/development
 
-See my full portfolio on https://grandsenne.com/ 
+See my full portfolio on https://grandsenne.com/, and feel free to get in touch. 
 
 Project Director / Creative lead / Blockchain expert:
 
