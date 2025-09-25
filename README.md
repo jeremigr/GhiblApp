@@ -4,7 +4,7 @@
 ![Preview](https://apps.grandsenne.com/ghiblapp/assets/princesse-mononoke-CESeXHLj.webp)
 
 
-<br>GhiblApp is a simple React responsive web app using the Studio Ghbli API to display the list of their long-feature movies.
+GhiblApp is a simple React responsive web app using the Studio Ghbli API to display the list of their long-feature movies.
 
 When a title is clicked, it displays the movie's image and description.
 
