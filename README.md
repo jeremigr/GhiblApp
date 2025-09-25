@@ -17,13 +17,12 @@ You can also sort the list by year, title or director, or look for a specific mo
 September 2025. 
 
 While my programming culture is solid, my practical skills are still those of a beginner. 
-<br>I'm currently working on improving them, and you can check more small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. 
+<br>I'm currently improving them, and you can check more small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. 
 
 ---
 
-### Jérémie Grandsenne: 
-### Project Director / Creative Lead / Blockchain Expert
-### See my portfolio on www.grandsenne.com
+### Jérémie Grandsenne: Project Director / Creative Lead / Blockchain Expert
+### See my full portfolio on www.grandsenne.com
 
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
