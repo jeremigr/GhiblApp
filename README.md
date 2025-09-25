@@ -28,4 +28,4 @@ More small development works <a href='https://grandsenne.com/development/' targe
 - Researcher, content manager and writer: 15 years in tech, marketing, culture.
 - Trusted by ConsenSys, Fetch.ai, Google, Vogue, Chanel. 
 
-<br><br>Feel free to get in touch!
+<br>Feel free to get in touch!
