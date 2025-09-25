@@ -20,9 +20,9 @@ Made by Jérémie Grandsenne, September 2025.
 
 More small development works on <a href='https://grandsenne.com/development/' target='_blank'>https://grandsenne.com/development</a>
 
-##### \> **See my full portfolio on <a href='https://grandsenne.com' target='_blank'>www.grandsenne.com</a>**, and feel free to get in touch. 
+### \> **See my full portfolio on <a href='https://grandsenne.com' target='_blank'>www.grandsenne.com</a>**, and feel free to get in touch. 
 
-###### Project Director / Creative lead / Blockchain expert:
+#### Project Director / Creative lead / Blockchain expert:
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
 - Researcher, content manager and writer: 15 years in tech, marketing, culture.
