@@ -16,11 +16,12 @@ You can also sort the list by year, title or director, or look for a specific mo
 
 Made by Jérémie Grandsenne, September 2025. 
 
----
-
 More small development works on <a href='https://grandsenne.com/development/' target='_blank'>https://grandsenne.com/development</a>
 
-### See my full portfolio on <a href='https://grandsenne.com' target='_blank'>www.grandsenne.com</a> 
+---
+
+
+### See my full portfolio on <a href='https://grandsenne.com' target='_blank' style='text-decoration:underline;'>>www.grandsenne.com</a> 
 ### Project Director / Creative lead / Blockchain expert
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
