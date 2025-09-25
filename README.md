@@ -11,7 +11,8 @@ When a title is clicked, it displays the movie's image and description.
 You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
 
 
-**See it live** on **<a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'>GhiblApp</a>.**
+**See it live:
+**<a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'>GhiblApp</a>**
 
 
 Made by Jérémie Grandsenne, September 2025. 
@@ -21,7 +22,7 @@ More small development works <a href='https://grandsenne.com/development/' targe
 ---
 
 
-### See my full portfolio on grandsenne.com
+### See my full portfolio on www.grandsenne.com
 ### Project Director / Creative lead / Blockchain expert
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
