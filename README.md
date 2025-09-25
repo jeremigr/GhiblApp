@@ -11,7 +11,7 @@ When a title is clicked, it displays the movie's image and description.
 You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
 
 
-**See GhiblApp live on https://apps.grandsenne.com/ghiblapp/.**
+> **See GhiblApp live on https://apps.grandsenne.com/ghiblapp/.**
 
 
 Made by Jérémie Grandsenne, September 2025. 
