@@ -14,15 +14,17 @@ You can also sort the list by year, title or director, or look for a specific mo
 **See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
 
 
-Made by Jérémie Grandsenne, September 2025. 
+September 2025. 
 
-My practical programming skills are still those of a beginner, but you can check more small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. 
+While my programming culture is solid, my practical skills are still those of a beginner. 
+<br>I'm currently working on improving them, and you can check more small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. 
 
 ---
 
-
-### See my full portfolio on www.grandsenne.com
+### Jérémie Grandsenne: 
 ### Project Director / Creative Lead / Blockchain Expert
+### See my portfolio on www.grandsenne.com
+
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
 - Researcher, content manager and writer: 15 years in tech, marketing, culture.
