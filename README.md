@@ -21,7 +21,7 @@ More small development works <a href='https://grandsenne.com/development/' targe
 ---
 
 
-### See my full portfolio on www.grandsenne.com
+### See my full portfolio on __www.grandsenne.com__
 ### Project Director / Creative Lead / Blockchain Expert
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
