@@ -13,10 +13,9 @@ You can also sort the list by year, title or director, or look for a specific mo
 
 **See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
 
+While my programming culture is solid, I'm still learning it in practice. 
 
 September 2025. 
-
-While my programming culture is solid, I'm still learning it in practice. 
 
 
 ---
