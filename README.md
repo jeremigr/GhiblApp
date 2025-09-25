@@ -16,8 +16,7 @@ You can also sort the list by year, title or director, or look for a specific mo
 
 Made by Jérémie Grandsenne, September 2025. 
 
-More small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>
-<br>While I have a solid programming culture, in practice I'm still learning. 
+More small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. While I have a solid programming culture, in practice I'm still learning. 
 
 ---
 
