@@ -17,6 +17,8 @@ While my programming culture is solid, in practice I'm still learning it, but I 
 
 <br>
 
+<a href='https://apps.grandsenne.com/ghiblapp' target='_blank'><img src='https://apps.grandsenne.com/ghiblapp/jeremiegrandsenne_ghiblapp.png'></a>
+
 ![Preview](https://apps.grandsenne.com/ghiblapp/jeremiegrandsenne_ghiblapp.png)
 
 Made by Jérémie Grandsenne, September 2025.
@@ -26,7 +28,7 @@ Made by Jérémie Grandsenne, September 2025.
 
 ### Jérémie Grandsenne 
 ### Project Director / Creative Lead / Blockchain Expert
-### Portfolio: www.grandsenne.com
+### See my Portfolio: www.grandsenne.com
 
 
 - Multidisciplinary founder and director, 10 years leading projects in web, web3 and arts.
