@@ -10,7 +10,7 @@ When a title is clicked, it displays the movie's image and description.
 
 You can also sort the list by year, title or director, or look for a specific movie or director in the search bar. 
 
-_Note: While my programming culture is solid, in practice I'm still learning it._
+Note: While my programming culture is solid, in practice I'm still learning it.
 
 **\> See it live:** <a href='https://apps.grandsenne.com/ghiblapp/' target='_blank'><b>GhiblApp</b></a>
 
