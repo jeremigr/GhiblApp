@@ -121,6 +121,8 @@ export default function FilmsExplorer() {
   const selectedFilm = selectedId ? films.find((film) => film.id === selectedId) : null;
 
 
+  
+
 
   return <div className="films-root" style={{color:'#9898fbff', paddingTop:'4em', paddingBottom:'6em'}} >
 
@@ -221,7 +223,7 @@ export default function FilmsExplorer() {
     {sortedFilms.map(film => (
     <div 
       key={film.id} 
-      onClick={() => { setSelectedId(film.id); setQuery(''); }} 
+      onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setSelectedId(film.id); setQuery(''); }}
       style={{ cursor: `url(${heartCursor}) 12 12, pointer`}}
       > 
       <strong>{film.title} </strong>  {film.director} - {film.year}  
