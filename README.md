@@ -16,8 +16,8 @@ You can also sort the list by year, title or director, or look for a specific mo
 
 September 2025. 
 
-While my programming culture is solid, my practical skills are still those of a beginner. 
-<br>I'm currently working on improving them, and you can check more small development works <a href='https://grandsenne.com/development/' target='_blank'>here</a>. 
+While my programming culture is solid, I'm still learning it in practice. 
+
 
 ---
 
