@@ -20,7 +20,7 @@ Made by Jérémie Grandsenne, September 2025.
 
 More small development works on https://grandsenne.com/development
 
-\>**See my full portfolio on https://grandsenne.com/**, and feel free to get in touch. 
+\> **See my full portfolio on https://grandsenne.com/**, and feel free to get in touch. 
 
 Project Director / Creative lead / Blockchain expert:
 
